@@ -5,10 +5,12 @@ class Counter extends Component {
         count: 0,
      };
 
+
     render() { 
         return <React.Fragment>
-            <span>{this.formatCount()}</span>
-            <button>Increment</button>
+
+            <span style={{fontSize:30}} className='badge badge-primary m-2'>{this.formatCount()}</span>
+            <button style={{fontSize:30}} className='btn btn-primary btn-sm'>Increment</button>
         </React.Fragment>;
     }
     formatCount () {
