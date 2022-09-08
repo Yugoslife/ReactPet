@@ -20,8 +20,11 @@ doHandleIncrement = () =>{
 }
 
 render() { 
+    console.log(this.props);
+
     return ( 
         <div>
+            {this.props.children}
             <span className={this.getBadgeClasses()}> {this.state.value}</span>
             <button 
             onClick={ () => this.handleIncrement ({ id:1 })}
