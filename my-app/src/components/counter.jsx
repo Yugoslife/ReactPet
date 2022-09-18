@@ -2,32 +2,21 @@ import React, { Component } from 'react';
 import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 class Counter extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            value: this.props.value
-        };
-      }
+   state = {
+    value: this.props.value
+   };
    
-
-handleIncrement = product => {
-    console.log(product);
+handleIncrement = () => {
+    console.log("PRO", this.props)
     this.setState({value: this.state.value +1});
-}
-
-doHandleIncrement = () =>{
-    this.handleIncrement({ id:1 })
-}
+};
 
 render() { 
-    console.log(this.props);
-
     return ( 
         <div>
-            {this.props.children}
             <span className={this.getBadgeClasses()}> {this.state.value}</span>
             <button 
-            onClick={ () => this.handleIncrement ({ id:1 })}
+            onClick = {this.handleIncrement} 
             className='btn btn-secondary btn-sm'
             >
             Increment
