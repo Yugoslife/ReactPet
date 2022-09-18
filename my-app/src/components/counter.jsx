@@ -21,6 +21,12 @@ render() {
             >
             Increment
             </button>
+            <button 
+                onClick={this.props.onDelete} 
+                className="btn btn-warning btn-sm m-2"
+            >
+                Delete
+            </button>
         </div>
         );
 }
