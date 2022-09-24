@@ -1,19 +1,21 @@
 import React, { Component } from "react";
 
-class NavBar extends Component {
-    render () {
+// State Functional Component - 
+// - функциональный компонент без сохранения состояния
+
+const NavBar = (props) => {
         return (
         <nav className="navbar navbar-light bg-light">
         <div className="container-fluid">
         <a className="navbar-brand" href="/something">
-        Navbar
+        Navbar {' '}
         <span className="badge bg-pill bg-secondary">
-            {this.props.totalCounters}
+            {props.totalCounters}
         </span>
         </a>
         </div>
         </nav>
     )
-    };
-}
+};
+
 export default NavBar;
