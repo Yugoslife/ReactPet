@@ -2,7 +2,13 @@ import React, { Component } from 'react';
 import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 class Counter extends Component {
-
+componentDidUpdate(prevProps, prevState){
+console.log('PrevProps', prevProps);
+console.log('PrevState', prevState);
+if (prevProps.counter.value !== this.props.counter.value) {
+    
+}
+}
 render() { 
     console.log('Counter - Rendered')
     return ( 
