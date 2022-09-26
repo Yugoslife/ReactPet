@@ -6,9 +6,13 @@ componentDidUpdate(prevProps, prevState){
 console.log('PrevProps', prevProps);
 console.log('PrevState', prevState);
 if (prevProps.counter.value !== this.props.counter.value) {
-    
 }
 }
+
+componentWillUnmount(){
+    console.log('Counter - Unmount')
+}
+
 render() { 
     console.log('Counter - Rendered')
     return ( 
