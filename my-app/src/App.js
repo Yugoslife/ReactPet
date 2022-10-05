@@ -3,6 +3,8 @@ import './App.css';
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import Counters from './components/counters';
 import React, { Component } from 'react';
+import { HookCounter } from './components/HookCounter';
+import Form from "./components/form";
 
 class App extends Component {
   state = { 
@@ -58,6 +60,11 @@ this.setState({})
         onDelete={this.handleDelete}
         onIncremet={this.handleIncrement}
         />
+        <div>
+          <HookCounter/>
+            <h3 className="exercise-title">Exercise 2 - Form</h3>
+            <Form />
+          </div>
       </main>
       </React.Fragment>
     )
