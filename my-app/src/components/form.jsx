@@ -1,69 +1,69 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import '../../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
-export default class Form extends Component {
-    state = {
-      name: "",
-      surname: ""
-    };
+export function Form () {
+    const [name, setName] = useState('');
+    const [surname, setSurname] = useState('');
 
-    handleInputChange = event => {
+
+    const handleInputChangeName = event => {
         const { target } = event;
         console.log('event', event)
-    
-        this.setState({
-          [target.name]: target.value
-        });
+        setName(event.target.value);
       };
 
-      handleSubmit = event => {
+    const handleInputChangeSurname = event => {
+        const { target } = event;
+        console.log('event', event)
+        setSurname(target.value);
+      };
+
+    const  handleSubmit = event => {
         event.preventDefault();
-        const { name, surname } = this.state;
         const result = `Hi ${name} ${surname}`;
         alert(result);
       };
 
-      handleResetAll = event => {
+    const handleResetAll = event => {
         event.preventDefault();
-        this.setState({
-            name: "",
-            surname: ""
-          });
+        setName('');
+        setSurname('')
         };
     
-      render() {
-        const { name, surname } = this.state;
         return (
-          <form onSubmit={this.handleSubmit}>
+          <form
+          onSubmit={handleSubmit}
+          >
             <label>
               Name:
-              <input
-                type="text"
-                name="name"
-                value={name}
-                onChange={this.handleInputChange}
-              />
+                <input
+                    type="text"
+                    name="name"
+                    value={name}
+                    onChange={handleInputChangeName}
+                />
             </label>
             <br />
             <label>
               Surname:
-              <input
-                type="text"
-                name="surname"
-                value={surname}
-                onChange={this.handleInputChange}
-              />
+                <input
+                    type="text"
+                    name="surname"
+                    value={surname}
+                    onChange={handleInputChangeSurname}
+                />
             </label>
-            <br />
-            <input className="btn btn-primary" type="submit" value="Submit" />
-
-            <button 
-            onClick={this.handleResetAll}
-            className="btn btn-light">
-                Reset fields
-            </button>
-
-          </form>
+        <br />
+                <button
+                    className="btn btn-primary" type="submit" value="submit">
+                    Submit
+                </button>
+                
+                <button
+                    onClick={handleResetAll}
+                    className="btn btn-secondary" type="" value="">
+                    Reset
+                </button>
+        </form>
         );
-      }
     }
