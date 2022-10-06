@@ -9,7 +9,7 @@ export function Form () {
     const handleInputChangeName = event => {
         const { target } = event;
         console.log('event', event)
-        setName(event.target.value);
+        setName(target.value);
       };
 
     const handleInputChangeSurname = event => {
