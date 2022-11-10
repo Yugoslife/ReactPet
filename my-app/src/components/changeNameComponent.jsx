@@ -1,13 +1,8 @@
-import React, { Component } from "react";
+import React, { PureComponent } from "react";
 
-class ChangeNameComponent extends Component {
+class ChangeNameComponent extends PureComponent {
   constructor(props) {
     super(props);
-  }
-
-  shouldComponentUpdate(nextProps, nextState) {
-    console.log("shouldComponentUpdate", nextProps, this.props.name);
-    return this.props.name === nextProps.name;
   }
 
   render() {
